@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Darshan Setu — guided Lalbaugcha Raja darshan assistance with clear booking details and group coordination." />
+<meta name="theme-color" content="#741d25" />
+<meta property="og:title" content="Darshan Setu — Guided Lalbaugcha Raja Darshan" />
+<meta property="og:description" content="Plan your Lalbaugcha Raja darshan with guided assistance and clear booking details." />
+<meta property="og:type" content="website" />
+<title>Darshan Setu — Guided Lalbaugcha Raja Darshan</title>
+<style>
+:root{
+  --maroon:#741d25; --deep:#3c1015; --gold:#c99a45; --cream:#fffaf2;
+  --ink:#211b1b; --muted:#756d6a; --line:#eadfd5;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fffdf9}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;border-bottom:1px solid var(--line);background:#fffdf9;position:sticky;top:0;z-index:10}
+.logo{display:flex;gap:11px;align-items:center;font-weight:800;letter-spacing:-.5px;font-size:21px}
+.logo-mark{width:37px;height:37px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:18px}
+.nav-actions{display:flex;align-items:center;gap:12px}.nav-actions select{width:auto;padding:9px 12px;border-radius:20px}.navlinks{display:flex;gap:28px;color:#625653;font-size:14px}
+.nav-cta{background:var(--maroon);color:white;padding:12px 18px;border-radius:25px;font-size:14px}
+.hero{background:linear-gradient(120deg,#fff9f0 0%,#fffdf9 52%,#f6e9dc 100%);padding:75px 6vw 64px;display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center}
+.eyebrow{color:var(--maroon);font-size:12px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+h1{font-family:Georgia,serif;font-size:clamp(42px,5.5vw,76px);line-height:1.02;margin:18px 0 20px;font-weight:500;letter-spacing:-2px}
+.hero p{font-size:17px;line-height:1.7;color:var(--muted);max-width:560px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{border:0;border-radius:28px;padding:15px 23px;cursor:pointer;font-weight:700}
+.btn.primary{background:var(--maroon);color:white}
+.btn.secondary{background:white;border:1px solid var(--line);color:var(--maroon)}
+.hero-card{background:var(--deep);border-radius:26px;min-height:410px;padding:30px;position:relative;overflow:hidden;color:white;box-shadow:0 25px 60px #5b1c241c}
+.hero-card:before{content:"ॐ";position:absolute;right:-10px;top:-35px;font-size:250px;color:#ffffff0d;font-family:Georgia}
+.card-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#e8c98c;letter-spacing:1px}
+.card-title{font-family:Georgia,serif;font-size:42px;line-height:1.05;margin:80px 0 16px;max-width:330px}
+.card-sub{color:#e9d9d0;line-height:1.6;max-width:320px}
+.badge{display:inline-block;border:1px solid #c99a4566;color:#e8c98c;padding:8px 12px;border-radius:20px;font-size:12px;margin-top:25px}
+.section{padding:75px 6vw}
+.section-head{text-align:center;max-width:700px;margin:0 auto 35px}
+.section h2{font-family:Georgia,serif;font-size:42px;font-weight:500;margin:12px 0}
+.section-head p{color:var(--muted);line-height:1.7}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{border:1px solid var(--line);border-radius:20px;padding:24px;background:white}
+.step-num{color:var(--gold);font-family:Georgia,serif;font-size:28px}
+.step h3{margin:20px 0 10px;font-size:17px}
+.step p{color:var(--muted);font-size:14px;line-height:1.6}
+.booking-wrap{background:#fbf2e9;padding:75px 6vw}
+.booking{max-width:1120px;margin:auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}
+.booking-copy{background:var(--maroon);color:white;border-radius:24px;padding:34px}
+.booking-copy h2{font-family:Georgia,serif;font-size:42px;font-weight:500;margin:12px 0 18px}
+.booking-copy p{color:#f2dfe0;line-height:1.7}
+.trust{margin-top:30px;display:grid;gap:13px;font-size:14px;color:#f7e9df}
+.panel{background:white;border:1px solid var(--line);border-radius:24px;padding:28px}
+.panel h3{margin:0 0 22px;font-size:23px}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:9px;color:#5e514d}
+input,select{width:100%;padding:14px;border:1px solid #ded2c9;border-radius:12px;background:#fffdfb;color:var(--ink);outline:none}
+input:focus,select:focus{border-color:var(--gold)}
+.date-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-height:420px;overflow-y:auto;padding:2px}
+.slot{border:1px solid var(--line);border-radius:12px;padding:13px 6px;background:white;cursor:pointer;font-weight:700;font-size:14px}
+.slot.active{background:#f7ead9;border-color:var(--gold);color:var(--maroon)}
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.package{border:1px solid var(--line);border-radius:20px;padding:25px;background:white;position:relative}
+.package.featured{border:2px solid var(--gold);box-shadow:0 12px 30px #9e6b2814}
+.tag{position:absolute;top:-13px;left:20px;background:var(--gold);color:white;padding:6px 12px;border-radius:16px;font-size:11px;font-weight:800}
+.package h3{font-family:Georgia,serif;font-size:25px;margin:0 0 10px}
+.price{font-size:29px;font-weight:800;color:var(--maroon)}
+.price small{font-size:13px;color:var(--muted);font-weight:500}
+.package p{color:var(--muted);font-size:14px;line-height:1.6}
+.package ul{padding-left:18px;color:#5e514d;font-size:14px;line-height:2}
+.package button{width:100%;margin-top:12px}
+.summary{margin-top:18px;padding:16px;border-radius:13px;background:#fff7ec;display:flex;justify-content:space-between;align-items:center}
+.summary strong{color:var(--maroon)}
+footer{padding:30px 6vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:13px}
+@media(max-width:850px){
+ .navlinks{display:none}.nav-actions select{display:block}.hero{grid-template-columns:1fr;padding-top:45px}.hero-card{min-height:330px}
+ .steps,.packages{grid-template-columns:1fr 1fr}.booking{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ .hero,.section,.booking-wrap{padding-left:20px;padding-right:20px}
+ .steps,.packages,.date-row{grid-template-columns:1fr}.slots{grid-template-columns:repeat(3,1fr);max-height:420px}
+ h1{font-size:48px}.section h2{font-size:35px}footer{padding:25px 20px;display:block}
+}
+</style>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="/" aria-label="Darshan Setu home"><span class="logo-mark">ॐ</span><span data-i18n="brand">Darshan Setu</span></a>
+  <div class="navlinks"><a href="#experience" data-i18n="navExperience">Experience</a><a href="#packages" data-i18n="navPackages">Packages</a><a href="#booking" data-i18n="navBooking">Book Darshan</a></div>
+  <div class="nav-actions"><select id="language" aria-label="Language" onchange="applyLanguage(this.value)"><option value="en">English</option><option value="mr">मराठी</option></select><a class="nav-cta" href="#booking" data-i18n="reserve">Reserve a Slot</a></div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow" data-i18n="heroEyebrow">A more peaceful way to plan your darshan</div>
+    <h1 data-i18n="heroTitle">Your journey to darshan, made simple.</h1>
+    <p data-i18n="heroText">Darshan Setu helps devotees plan an organized Lalbaugcha Raja visit with clear booking details, guided assistance, and a dedicated team supporting you throughout your journey—until your darshan is complete and you safely exit.</p>
+    <div class="actions"><a class="btn primary" href="#booking" data-i18n="bookNow">Book Your Darshan</a><a class="btn secondary" href="#experience" data-i18n="howItWorks">How it works</a></div>
+  </div>
+  <div class="hero-card">
+    <div class="card-top"><span>DARSHAN SETU</span><span data-i18n="ganpati">GANPATI BAPPA MORYA</span></div>
+    <div class="card-title" data-i18n="cardTitle">A sacred visit.<br>A smoother journey.</div>
+    <div class="card-sub" data-i18n="cardSub">Choose your date, select a suitable slot, and let our team guide you through the experience.</div>
+    <span class="badge" data-i18n="badge">Pre-booked guided assistance</span>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="section-head"><div class="eyebrow" data-i18n="serviceEyebrow">What your package includes</div><h2 data-i18n="serviceTitle">A team beside you, from start to finish.</h2><p data-i18n="serviceText">Your Darshan Setu package is designed to cover the complete guided journey—not just the booking.</p></div>
+  <div class="steps">
+    <div class="step"><div class="step-num">01</div><h3 data-i18n="step1Title">Pre-booked planning</h3><p data-i18n="step1Text">Choose your date, preferred time slot, and package before you arrive.</p></div>
+    <div class="step"><div class="step-num">02</div><h3 data-i18n="step2Title">Meet your Darshan Setu team</h3><p data-i18n="step2Text">Receive clear meeting instructions and connect with the team assigned to your group.</p></div>
+    <div class="step"><div class="step-num">03</div><h3 data-i18n="step3Title">Guided darshan journey</h3><p data-i18n="step3Text">Our team assists and coordinates with you throughout the journey until your darshan is covered.</p></div>
+    <div class="step"><div class="step-num">04</div><h3 data-i18n="step4Title">Safe exit and support</h3><p data-i18n="step4Text">We stay with you through the final stage and help you exit smoothly after darshan.</p></div>
+  </div>
+</section>
+
+<section class="section" id="packages">
+  <div class="section-head"><div class="eyebrow" data-i18n="packageEyebrow">Choose your package</div><h2 data-i18n="packageTitle">Made for individuals, families, and friends.</h2><p data-i18n="packageText">Select the package that suits your group. The booking page will calculate your estimated total.</p></div>
+  <div class="packages">
+    <div class="package"><h3 data-i18n="soloTitle">Solo Darshan</h3><div class="price">₹1,500 <small data-i18n="perPerson">/ person</small></div><p data-i18n="soloText">For an individual devotee.</p><ul><li data-i18n="includedGuidance">Guided assistance</li><li data-i18n="includedSlot">Selected date and slot</li><li data-i18n="includedConfirmation">Booking confirmation</li></ul><button class="btn secondary" onclick="choosePackage('Solo Darshan',1500,1)">Select package</button></div>
+    <div class="package featured"><div class="tag" data-i18n="familyTag">BEST FOR FAMILIES</div><h3 data-i18n="familyTitle">Family Pack</h3><div class="price">₹13,000 <small data-i18n="upTo10">/ up to 10 people</small></div><p data-i18n="familyText">Bring your family together and save.</p><ul><li data-i18n="familyIncluded1">Up to 10 people</li><li data-i18n="familyIncluded2">Guided assistance</li><li data-i18n="familyIncluded3">Group coordination</li></ul><button class="btn primary" onclick="choosePackage('Family Pack',13000,10)">Select package</button></div>
+    <div class="package"><h3 data-i18n="friendsTitle">Friends Pack</h3><div class="price" data-i18n="customPrice">Custom <small data-i18n="groupPricing">group pricing</small></div><p data-i18n="friendsText">Better value for groups of friends.</p><ul><li data-i18n="friendsIncluded1">Flexible group size</li><li data-i18n="friendsIncluded2">Discount based on people</li><li data-i18n="friendsIncluded3">Dedicated coordination</li></ul><button class="btn secondary" onclick="choosePackage('Friends Pack',1500,11)">Select package</button></div>
+  </div>
+</section>
+
+<section class="booking-wrap" id="booking">
+  <div class="booking">
+    <div class="booking-copy">
+      <div class="eyebrow" style="color:#e8c98c">Reserve your visit</div>
+      <h2 data-i18n="bookingTitle">Make your plans with confidence.</h2>
+      <p data-i18n="bookingText">Choose your date, time, and group size. Your booking summary will update automatically.</p>
+      <div class="trust"><div>✓ Clear pricing before payment</div><div>✓ Confirmation sent after booking</div><div>✓ Dedicated customer support</div><div>✓ Service details explained upfront</div></div>
+    </div>
+    <div class="panel">
+      <h3 data-i18n="bookingDetails">Booking details</h3>
+      <div class="date-row">
+        <div class="field"><label for="date" data-i18n="chooseDate">Choose date</label><input id="date" type="date"></div>
+        <div class="field"><label for="people" data-i18n="numberPeople">Number of people</label><select id="people" onchange="updateSummary()" oninput="updateSummary()"><option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5">5 people</option><option value="6">6 people</option><option value="7">7 people</option><option value="8">8 people</option><option value="9">9 people</option><option value="10">10 people</option><option value="11">11 people</option><option value="12">12 people</option><option value="13">13 people</option><option value="14">14 people</option><option value="15">15 people</option><option value="16">16 people</option><option value="17">17 people</option><option value="18">18 people</option></select></div>
+      </div>
+      <div class="field"><label id="timeLabel" data-i18n="chooseTime">Choose time slot</label><div class="slots" id="slots" role="group" aria-labelledby="timeLabel"></div></div>
+      <div class="field"></div>
+      <div class="summary"><span data-i18n="estimatedTotal">Estimated total</span><strong id="total">₹1,500</strong></div>
+      <button class="btn primary" data-i18n="continue" style="width:100%;margin-top:16px" onclick="alert(currentLang==='mr'?'डेमो: बुकिंग, पेमेंट आणि कन्फर्मेशन पुढील टप्प्यात जोडले जातील.':'Demo only: booking, payment and confirmation integration will be added next.')">Continue to confirmation →</button>
+      <p data-i18n="demoNote" style="font-size:12px;color:#8b7c74;line-height:1.5;margin-bottom:0">Demo website: availability, payment, official access wording, and confirmation delivery can be connected after finalizing operations.</p>
+    </div>
+  </div>
+</section>
+
+<footer><div data-i18n="copyright">© 2026 Darshan Setu</div><div data-i18n="footerText">Guided darshan assistance • Clear booking • Devotee-first service</div></footer>
+
+<script>
+let currentLang="en"; const people=document.getElementById('people');
+people.addEventListener('change', updateSummary);
+people.addEventListener('input', updateSummary);
+const today=new Date();
+const localToday = new Date(today.getTime() - today.getTimezoneOffset()*60000).toISOString().split('T')[0];
+document.getElementById('date').value=localToday;
+document.getElementById('date').min=localToday;
+// 24-hour schedule in 30-minute intervals = 48 slots.
+const times = Array.from({length:48}, (_, i) => {
+  const minutes = i * 30;
+  const hour24 = Math.floor(minutes / 60);
+  const minute = minutes % 60;
+  const suffix = hour24 < 12 ? "AM" : "PM";
+  const hour12 = hour24 % 12 || 12;
+  return `${hour12}:${String(minute).padStart(2,"0")} ${suffix}`;
+});
+
+let selectedTime = "12:00 AM";
+
+function renderSlots() {
+  const labels = currentLang === "mr"
+    ? times.map(t => {
+        const [hm, suffix] = t.split(" ");
+        const [h,m] = hm.split(":");
+        return `${h}:${m} ${suffix === "AM" ? "म." : "सां."}`;
+      })
+    : times;
+
+  document.getElementById('slots').innerHTML = labels.map((label,i) =>
+    `<button type="button" class="slot ${i===0?'active':''}"
+      aria-pressed="${i===0?'true':'false'}"
+      onclick="selectSlot(this,'${times[i]}')">${label}</button>`
+  ).join('');
+}
+
+function selectSlot(el,t) {
+  document.querySelectorAll('.slot').forEach(x => {
+    x.classList.remove('active');
+    x.setAttribute('aria-pressed','false');
+  });
+  el.classList.add('active');
+  el.setAttribute('aria-pressed','true');
+  selectedTime=t;
+}
+function choosePackage(name,price,count){people.value=count;updateSummary();document.getElementById('booking').scrollIntoView({behavior:'smooth'})}
+function updateSummary(){
+ const p=parseInt(people.value,10)||1;
+ const total=p*1500;
+ const totalEl=document.getElementById('total');
+ totalEl.textContent='₹'+total.toLocaleString('en-IN');
+ totalEl.setAttribute('aria-label',p+' people, estimated total ₹'+total.toLocaleString('en-IN'));
+}
+updateSummary();
+
+const translations={
+en:{
+brand:"Darshan Setu",navExperience:"Experience",navPackages:"Packages",navBooking:"Book Darshan",reserve:"Reserve a Slot",
+heroEyebrow:"A more peaceful way to plan your darshan",heroTitle:"Your journey to darshan, made simple.",
+heroText:"Darshan Setu helps devotees plan an organized Lalbaugcha Raja visit with clear booking details, guided assistance, and a dedicated team supporting you throughout your journey—until your darshan is complete and you safely exit.",
+bookNow:"Book Your Darshan",howItWorks:"How it works",ganpati:"GANPATI BAPPA MORYA",cardTitle:"A sacred visit.<br>A smoother journey.",
+cardSub:"Choose your date, select a suitable slot, and let our team guide you through the experience.",badge:"Pre-booked guided assistance",
+serviceEyebrow:"What your package includes",serviceTitle:"A team beside you, from start to finish.",
+serviceText:"Your Darshan Setu package is designed to cover the complete guided journey—not just the booking.",
+step1Title:"Pre-booked planning",step1Text:"Choose your date, preferred time slot, and package before you arrive.",
+step2Title:"Meet your Darshan Setu team",step2Text:"Receive clear meeting instructions and connect with the team assigned to your group.",
+step3Title:"Guided darshan journey",step3Text:"Our team assists and coordinates with you throughout the journey until your darshan is covered.",
+step4Title:"Safe exit and support",step4Text:"We stay with you through the final stage and help you exit smoothly after darshan.",
+packageEyebrow:"Choose your package",packageTitle:"Made for individuals, families, and friends.",
+packageText:"Select the package that suits your group. The booking page will calculate your estimated total.",
+soloTitle:"Solo Darshan",perPerson:"/ person",soloText:"For an individual devotee.",includedGuidance:"Guided assistance",includedSlot:"Selected date and slot",includedConfirmation:"Booking confirmation",
+familyTag:"BEST FOR FAMILIES",familyTitle:"Family Pack",upTo10:"/ up to 10 people",familyText:"Bring your family together and save.",familyIncluded1:"Up to 10 people",familyIncluded2:"Guided assistance",familyIncluded3:"Group coordination",
+friendsTitle:"Friends Pack",customPrice:"Custom",groupPricing:"group pricing",friendsText:"Better value for groups of friends.",friendsIncluded1:"Flexible group size",friendsIncluded2:"Discount based on people",friendsIncluded3:"Dedicated coordination",
+bookingTitle:"Make your plans with confidence.",bookingText:"Choose your date, time, and group size. Your booking summary will update automatically.",
+bookingDetails:"Booking details",chooseDate:"Choose date",numberPeople:"Number of people",chooseTime:"Choose time slot",estimatedTotal:"Estimated total",continue:"Continue to confirmation →",
+demoNote:"Your booking request will open WhatsApp with the selected details. Replace the WhatsApp number in the script before launch.",
+copyright:"© 2026 Darshan Setu",footerText:"Guided darshan assistance • Clear booking • Devotee-first service"
+},
+mr:{
+brand:"दर्शन सेतू",navExperience:"अनुभव",navPackages:"पॅकेजेस",navBooking:"दर्शन बुक करा",reserve:"स्लॉट राखीव करा",
+heroEyebrow:"दर्शनाची योजना अधिक सोपी करा",heroTitle:"तुमचा दर्शनाचा प्रवास, आता अधिक सोपा.",
+heroText:"दर्शन सेतू भक्तांना लालबागचा राजा दर्शनासाठी नियोजनबद्ध सेवा, स्पष्ट बुकिंग माहिती, मार्गदर्शन आणि तुमचे दर्शन पूर्ण होऊन तुम्ही सुरक्षितपणे बाहेर पडेपर्यंत संपूर्ण प्रवासात मदत करणारी टीम उपलब्ध करून देतो.",
+bookNow:"दर्शन बुक करा",howItWorks:"कसे कार्य करते",ganpati:"गणपती बाप्पा मोरया",cardTitle:"पवित्र दर्शन.<br>अधिक सुरळीत प्रवास.",
+cardSub:"तारीख आणि योग्य वेळेचा स्लॉट निवडा. आमची टीम तुमच्या संपूर्ण प्रवासात मार्गदर्शन करेल.",badge:"पूर्वनियोजित मार्गदर्शित सेवा",
+serviceEyebrow:"तुमच्या पॅकेजमध्ये काय समाविष्ट आहे",serviceTitle:"सुरुवातीपासून शेवटपर्यंत तुमच्यासोबत टीम.",
+serviceText:"दर्शन सेतूचे पॅकेज फक्त बुकिंगपुरते मर्यादित नाही; संपूर्ण मार्गदर्शित प्रवास यात समाविष्ट आहे.",
+step1Title:"आधीच बुकिंगचे नियोजन",step1Text:"येण्यापूर्वी तारीख, वेळेचा स्लॉट आणि पॅकेज निवडा.",
+step2Title:"दर्शन सेतू टीमशी भेट",step2Text:"भेटीच्या स्पष्ट सूचना मिळवा आणि तुमच्या ग्रुपसाठी नियुक्त टीमशी संपर्क साधा.",
+step3Title:"मार्गदर्शित दर्शन प्रवास",step3Text:"तुमचे दर्शन पूर्ण होईपर्यंत आमची टीम संपूर्ण प्रवासात मदत आणि समन्वय करेल.",
+step4Title:"सुरक्षित बाहेर पडणे आणि मदत",step4Text:"दर्शनानंतर तुम्ही सहजपणे बाहेर पडेपर्यंत आमची टीम तुमच्यासोबत राहील.",
+packageEyebrow:"तुमचे पॅकेज निवडा",packageTitle:"व्यक्ती, कुटुंब आणि मित्रांसाठी योग्य.",
+packageText:"तुमच्या ग्रुपनुसार पॅकेज निवडा. बुकिंग पेजवर अंदाजे एकूण रक्कम दिसेल.",
+soloTitle:"सोलो दर्शन",perPerson:"/ व्यक्ती",soloText:"एका भक्तासाठी.",includedGuidance:"मार्गदर्शित मदत",includedSlot:"निवडलेली तारीख आणि स्लॉट",includedConfirmation:"बुकिंग कन्फर्मेशन",
+familyTag:"कुटुंबासाठी उत्तम",familyTitle:"फॅमिली पॅक",upTo10:"/ १० जणांपर्यंत",familyText:"कुटुंबासोबत दर्शन घ्या आणि बचत करा.",familyIncluded1:"१० जणांपर्यंत",familyIncluded2:"मार्गदर्शित मदत",familyIncluded3:"ग्रुप समन्वय",
+friendsTitle:"फ्रेंड्स पॅक",customPrice:"कस्टम",groupPricing:"ग्रुप किंमत",friendsText:"मित्रांच्या ग्रुपसाठी अधिक चांगली किंमत.",friendsIncluded1:"लवचिक ग्रुप आकार",friendsIncluded2:"लोकसंख्येनुसार सवलत",friendsIncluded3:"समर्पित समन्वय",
+bookingTitle:"आत्मविश्वासाने तुमचे नियोजन करा.",bookingText:"तारीख, वेळ आणि लोकांची संख्या निवडा. बुकिंगचा अंदाजे खर्च आपोआप बदलेल.",
+bookingDetails:"बुकिंगची माहिती",chooseDate:"तारीख निवडा",numberPeople:"लोकांची संख्या",chooseTime:"वेळेचा स्लॉट निवडा",estimatedTotal:"अंदाजे एकूण रक्कम",continue:"कन्फर्मेशनकडे जा →",
+demoNote:"तुमच्या निवडलेल्या माहितीसह WhatsApp मध्ये बुकिंग विनंती उघडेल. लॉन्चपूर्वी script मध्ये WhatsApp नंबर सेट करा.",
+copyright:"© २०२६ दर्शन सेतू",footerText:"मार्गदर्शित दर्शन सेवा • स्पष्ट बुकिंग • भक्तांना प्रथम प्राधान्य"
+}};
+function applyLanguage(lang){
+ currentLang=lang;
+ renderSlots();
+ document.documentElement.lang=lang==="mr"?"mr":"en";
+ document.querySelectorAll("[data-i18n]").forEach(el=>{
+   const key=el.getAttribute("data-i18n");
+   if(translations[lang][key]) el.innerHTML=translations[lang][key];
+ });
+ const options=document.getElementById("people").options;
+ for(let i=0;i<options.length;i++){
+   const n=i+1;
+   options[i].textContent=lang==="mr"?(n===1?"१ व्यक्ती":`${n} लोक`):(n===1?"1 person":`${n} people`);
+ }
+}
+
+applyLanguage("en");
+renderSlots();
+
+
+// ===== PAYMENT + BOOKING CONFIGURATION =====
+async function getSelectedDate() {
+  const value = document.getElementById('date').value;
+  if (!value) return "Not selected";
+  const d = new Date(value + "T00:00:00");
+  return d.toLocaleDateString(currentLang === "mr" ? "mr-IN" : "en-IN", {
+    day: "numeric", month: "long", year: "numeric"
+  });
+}
+
+function setStatus(message, isError=false) {
+  const el = document.getElementById('bookingStatus');
+  el.textContent = message;
+  el.style.color = isError ? "#a02a2a" : "#5e514d";
+}
+
+async function startPayment() {
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const peopleCount = parseInt(people.value, 10) || 1;
+  const date = document.getElementById('date').value;
+
+  if (!name || !phone || !email || !date) {
+    setStatus("Please complete your name, WhatsApp number, email and date.", true);
+    return;
+  }
+
+  const digits = phone.replace(/\D/g, "");
+  if (digits.length < 10) {
+    setStatus("Please enter a valid WhatsApp number.", true);
+    return;
+  }
+
+  setStatus("Creating your secure payment session…");
+
+  try {
+    const response = await fetch("/api/create-order", {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({
+        name, phone, email, date,
+        timeSlot: selectedTime,
+        people: peopleCount
+      })
+    });
+
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Unable to create order.");
+
+    const options = {
+      key: data.keyId,
+      amount: data.amount,
+      currency: data.currency,
+      name: "Darshan Setu",
+      description: `Lalbaugcha Raja Darshan — ${peopleCount} person(s)`,
+      order_id: data.orderId,
+      prefill: {name, email, contact: `+91${digits.slice(-10)}`},
+      theme: {color: "#741d25"},
+      handler: async function (payment) {
+        setStatus("Verifying your payment and confirming your booking…");
+        try {
+          const verify = await fetch("/api/verify-payment", {
+            method: "POST",
+            headers: {"Content-Type":"application/json"},
+            body: JSON.stringify({
+              bookingId: data.bookingId,
+              razorpay_order_id: payment.razorpay_order_id,
+              razorpay_payment_id: payment.razorpay_payment_id,
+              razorpay_signature: payment.razorpay_signature
+            })
+          });
+          const result = await verify.json();
+          if (!verify.ok) throw new Error(result.error || "Payment verification failed.");
+          window.location.href = `/confirmation.html?booking=${encodeURIComponent(data.bookingId)}`;
+        } catch (err) {
+          setStatus(err.message, true);
+        }
+      },
+      modal: {
+        ondismiss: function() {
+          setStatus("Payment window closed. Your booking is not confirmed.");
+        }
+      }
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.on("payment.failed", function () {
+      setStatus("Payment failed or was declined. Please try again.", true);
+    });
+    rzp.open();
+  } catch (err) {
+    setStatus(err.message, true);
+  }
+}
+</script>
+</body>
+</html>
